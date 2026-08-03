@@ -42,7 +42,7 @@ const Projects = () => {
       category: "frontend",
       flagship: false,
       github: "https://github.com/aarush193",
-      demo: "https://example.com",
+      demo: "https://notes-app-react-kappa-blue.vercel.app/",
       icon: <Folder size={20} />,
       visualLayout: (
         <div className="card-visual notes-visual">
@@ -61,7 +61,7 @@ const Projects = () => {
       category: "fullstack",
       flagship: false,
       github: "https://github.com/aarush193",
-      demo: "https://example.com",
+      demo: "https://express-html-site.onrender.com",
       icon: <Database size={20} />,
       visualLayout: (
         <div className="card-visual gym-visual">
@@ -80,7 +80,7 @@ const Projects = () => {
       category: "frontend",
       flagship: false,
       github: "https://github.com/aarush193",
-      demo: "https://example.com",
+      demo: "https://todo-list-xi-fawn.vercel.app/",
       icon: <Compass size={20} />,
       visualLayout: (
         <div className="card-visual todo-visual">
