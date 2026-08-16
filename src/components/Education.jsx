@@ -32,7 +32,7 @@ const Education = () => {
 
               <div className="edu-meta">
                 <span className="meta-badge">
-                  <Calendar size={14} /> Graduated
+                  <Calendar size={14} /> 2021 – 2025
                 </span>
               </div>
             </div>
@@ -45,7 +45,7 @@ const Education = () => {
                   <BookOpen size={18} className="univ-icon" />
                   <div>
                     <h4 className="college-name">Institute of Engineering and Technology (IET), Khandari</h4>
-                    <p className="university-name">Dr. Bhimrao Ambedkar University</p>
+                    <p className="university-name">Dr. Bhimrao Ambedkar University (DBRAU)</p>
                   </div>
                 </div>
 

@@ -15,77 +15,84 @@ const Projects = () => {
     {
       id: 1,
       title: "SkillSwap",
-      subtitle: "Flagship Project",
-      description: "A full-stack community platform where users exchange skills using a time-credit system instead of money. Features secure user accounts, trade logs, and email notifications.",
-      features: ["User Authentication", "Time Credit Economy", "Email Integration", "Database Management"],
-      tech: ["React", "Supabase", "SMTP", "JavaScript"],
+      subtitle: "Full Stack Skill Exchange Platform",
+      description: "My main flagship project: a time-bank platform where users exchange skills using Time Credits. Features custom atomic exchange settlements, an immutable time-bank ledger, Supabase RPC database validation, incoming/sent proposal lifecycles, and user authentication with edge-case protection.",
+      features: [
+        "User Auth & Profiles",
+        "Time Bank Economy",
+        "Exchange Proposal Lifecycles",
+        "Atomic Settlement & RPC Functions",
+        "PostgreSQL & Row Level Security",
+        "Next.js 16 SSR & Supabase Modernization"
+      ],
+      tech: ["Next.js 16", "React", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS", "Vercel"],
       category: "fullstack",
       flagship: true,
-      github: "https://github.com/aarush193",
-      demo: "https://example.com",
+      github: "https://github.com/aarush193/SkillSwap",
+      demo: "https://skillswap-orcin-psi.vercel.app/",
       icon: <Layers size={20} />,
       visualLayout: (
         <div className="card-visual skillswap-visual">
-          <div className="vis-node">User A</div>
-          <div className="vis-arrow">1 Credit →</div>
-          <div className="vis-node">User B</div>
+          <div className="vis-node">User A (Skill)</div>
+          <div className="vis-arrow">Time Credit Settlement →</div>
+          <div className="vis-node">User B (Learner)</div>
         </div>
       )
     },
     {
       id: 2,
-      title: "React Notes App",
-      subtitle: "Frontend App",
-      description: "A notes management application built using React and Vite featuring state persistence and lightweight client-side filtering.",
-      features: ["Create & Delete Notes", "React Hooks", "LocalStorage Persistence"],
-      tech: ["React", "Vite", "JavaScript", "CSS"],
+      title: "Todo List App",
+      subtitle: "Task Management App",
+      description: "Task management application featuring CRUD operations, search filtering, subtasks, and LocalStorage data persistence.",
+      features: ["CRUD Operations", "Search & Filtering", "Subtasks Support", "LocalStorage Persistence"],
+      tech: ["JavaScript", "HTML5", "CSS3", "LocalStorage"],
       category: "frontend",
       flagship: false,
-      github: "https://github.com/aarush193",
-      demo: "https://notes-app-react-kappa-blue.vercel.app/",
-      icon: <Folder size={20} />,
+      github: "https://github.com/aarush193/todo-list",
+      demo: "https://todo-list-xi-fawn.vercel.app/",
+      icon: <Compass size={20} />,
       visualLayout: (
-        <div className="card-visual notes-visual">
-          <div className="vis-note-item">Note A</div>
-          <div className="vis-note-item">Note B</div>
+        <div className="card-visual todo-visual">
+          <div className="vis-todo-item checked">Task CRUD</div>
+          <div className="vis-todo-item">Subtasks</div>
         </div>
       )
     },
     {
       id: 3,
-      title: "Express Gym Website",
-      subtitle: "Backend Project",
-      description: "A website built with Express.js demonstrating backend routing, clean controller templates, and response rendering.",
-      features: ["Routing APIs", "Static Serving", "Contact Requests Ingestion"],
-      tech: ["Node.js", "Express.js", "HTML", "CSS"],
-      category: "fullstack",
+      title: "Notes App",
+      subtitle: "React Note-Taking App",
+      description: "React note-taking application with LocalStorage persistence, built using React Hooks and modular, reusable component architecture.",
+      features: ["React Hooks State", "Reusable Components", "LocalStorage Persistence"],
+      tech: ["React", "JavaScript", "LocalStorage", "CSS3"],
+      category: "frontend",
       flagship: false,
-      github: "https://github.com/aarush193",
+      github: "https://github.com/aarush193/notes-app-react",
+      demo: "https://notes-app-react-kappa-blue.vercel.app/",
+      icon: <Folder size={20} />,
+      visualLayout: (
+        <div className="card-visual notes-visual">
+          <div className="vis-note-item">Hooks</div>
+          <div className="vis-note-item">State</div>
+        </div>
+      )
+    },
+    {
+      id: 4,
+      title: "Express Website",
+      subtitle: "Server-Side Routing & Web App",
+      description: "A responsive multi-page website built with Node.js and Express.js, using Express for server-side routing and static file serving, with interactive frontend elements and responsive design.",
+      features: ["Express Router", "Static File Serving", "Multi-Page Layout"],
+      tech: ["Node.js", "Express.js", "HTML", "CSS", "JavaScript"],
+      category: "frontend",
+      flagship: false,
+      github: "https://github.com/aarush193/express-html-site.git",
       demo: "https://express-html-site.onrender.com",
       icon: <Database size={20} />,
       visualLayout: (
         <div className="card-visual gym-visual">
           <div className="vis-route">POST /contact</div>
           <div className="vis-route">GET /classes</div>
-        </div>
-      )
-    },
-    {
-      id: 4,
-      title: "Todo Application",
-      subtitle: "JavaScript Core",
-      description: "A responsive task management application demonstrating modern DOM manipulation, array filters, and simple styling.",
-      features: ["CRUD Operations", "Active / Completed Filter", "LocalStorage Persistence"],
-      tech: ["HTML5", "CSS3", "JavaScript"],
-      category: "frontend",
-      flagship: false,
-      github: "https://github.com/aarush193",
-      demo: "https://todo-list-xi-fawn.vercel.app/",
-      icon: <Compass size={20} />,
-      visualLayout: (
-        <div className="card-visual todo-visual">
-          <div className="vis-todo-item checked">Task A</div>
-          <div className="vis-todo-item">Task B</div>
         </div>
       )
     }

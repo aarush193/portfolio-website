@@ -18,7 +18,7 @@ const Contact = () => {
         >
           <h3 className="goals-title">What I'm Looking For</h3>
           <p className="goals-text">
-            I am currently looking for <strong>Frontend Developer</strong>, <strong>React Developer</strong>, or <strong>Full Stack Developer</strong> opportunities where I can contribute to meaningful products, collaborate with experienced engineers, continuously learn, and grow as a software developer.
+            I am a Computer Science graduate actively looking for my first software development role as a <strong>Full Stack Web Developer</strong>, <strong>Frontend Developer</strong>, or <strong>Software Engineer</strong> where I can build scalable, user-focused web applications and contribute to real-world projects.
           </p>
         </motion.div>
 
@@ -37,7 +37,7 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
           >
             <p className="contact-box-desc">
-              Have an open position, a project proposal, or want to discuss full-stack opportunities? Reach out directly through any channel!
+              Whether you have an open position, a project proposal, or want to discuss full-stack web development, feel free to get in touch!
             </p>
 
             <div className="contact-info-list">
@@ -51,45 +51,30 @@ const Contact = () => {
                 </div>
               </a>
 
-              <a href="tel:+919653561366" className="contact-info-item">
-                <div className="icon-wrapper">
-                  <Phone size={18} />
-                </div>
-                <div>
-                  <span className="info-label">Phone</span>
-                  <span className="info-value">+91 96535 61366</span>
-                </div>
-              </a>
-
               <div className="contact-info-item">
                 <div className="icon-wrapper">
                   <MapPin size={18} />
                 </div>
                 <div>
                   <span className="info-label">Location</span>
-                  <span className="info-value">Agra, Uttar Pradesh, India</span>
+                  <span className="info-value">Agra, India</span>
                 </div>
               </div>
             </div>
 
             <div className="action-buttons-group">
               <a 
-                href="/resume.pdf" 
-                download 
+                href="mailto:aarushsolomon193@gmail.com" 
                 className="btn btn-primary resume-btn"
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert("Resume download triggered (simulated placeholder).");
-                }}
               >
-                <Download size={18} /> Download Resume
+                <Mail size={18} /> Send Message
               </a>
 
               <div className="socials-horizontal">
                 <a href="https://github.com/aarush193" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="GitHub">
                   <Github size={20} />
                 </a>
-                <a href="https://linkedin.com/in/aarush-solomon-217148372" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/aarush-solomon-217148372" target="_blank" rel="noopener noreferrer" className="social-circle" aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
               </div>

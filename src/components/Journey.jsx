@@ -5,44 +5,44 @@ import { Award, Code, Compass, Layers, Rocket, Sparkles, Terminal, Database } fr
 const Journey = () => {
   const steps = [
     {
-      title: "1. Web Foundations",
-      description: "Mastered HTML5 & CSS3 layout design and responsive interfaces.",
+      title: "1. Computer Science Engineering (B.Tech)",
+      description: "Completed Computer Science degree (2021–2025) at IET Khandari, DBRAU, building core engineering foundations.",
       icon: <Compass size={16} />,
       status: "completed"
     },
     {
-      title: "2. JavaScript Core",
-      description: "Learned ES6 syntax, DOM manipulation, and dynamic event handling.",
+      title: "2. Web Foundations & JavaScript",
+      description: "Mastered HTML5, CSS3, ES6+ JavaScript, TypeScript, and modern responsive web layouts.",
       icon: <Code size={16} />,
       status: "completed"
     },
     {
-      title: "3. Git & Collaboration",
-      description: "Learned version control, branching models, and remote workflows on GitHub.",
-      icon: <Terminal size={16} />,
-      status: "completed"
-    },
-    {
-      title: "4. Backend Foundations",
-      description: "Built backend APIs and routing layers using Node.js and Express.js.",
-      icon: <Layers size={16} />,
-      status: "completed"
-    },
-    {
-      title: "5. React Ecosystem",
-      description: "Engineered single-page client apps with React hooks and Vite configurations.",
+      title: "3. React & Modern Frontend",
+      description: "Engineered responsive client applications using React.js, Next.js, Tailwind CSS, and Framer Motion.",
       icon: <Sparkles size={16} />,
       status: "completed"
     },
     {
-      title: "6. Data Persistence",
-      description: "Integrated MongoDB, Supabase, and Firebase Firestore databases.",
+      title: "4. Backend & API Services",
+      description: "Built backend APIs, custom routers, and microservices using Node.js and Express.js.",
+      icon: <Layers size={16} />,
+      status: "completed"
+    },
+    {
+      title: "5. Database & Cloud Architecture",
+      description: "Architected data schemas and security policies with PostgreSQL, Supabase, and MongoDB.",
       icon: <Database size={16} />,
       status: "completed"
     },
     {
-      title: "7. Current Focus",
-      description: "Studying Advanced React patterns, backend system design, and production workflows.",
+      title: "6. SkillSwap Flagship Platform",
+      description: "Built and deployed a full-stack time-bank skill exchange platform featuring atomic transaction logic and RPC functions.",
+      icon: <Award size={16} />,
+      status: "completed"
+    },
+    {
+      title: "7. Seeking Software Role",
+      description: "Actively seeking entry-level Full Stack Web Developer opportunities to build high-impact applications.",
       icon: <Rocket size={16} />,
       status: "current"
     }

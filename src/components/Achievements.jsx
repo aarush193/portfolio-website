@@ -5,33 +5,33 @@ import { CheckCircle2, Award, Zap, Code, ShieldCheck, GitPullRequest, Globe } fr
 const Achievements = () => {
   const achievements = [
     {
-      title: "Full Stack Training",
-      description: "Completed a comprehensive Full Stack Web Development Course.",
+      title: "Computer Science Degree",
+      description: "B.Tech in Computer Science Engineering (IET Khandari, DBRAU, 2021–2025).",
       icon: <Award size={20} />
     },
     {
-      title: "Industry Internship",
-      description: "Completed a Front-End Development Internship at Radixcube Solutions.",
+      title: "Full Stack SkillSwap System",
+      description: "Engineered a time-bank platform with custom transaction validation, Supabase RPC, and PostgreSQL ledger.",
       icon: <ShieldCheck size={20} />
     },
     {
       title: "Project Portfolio",
-      description: "Built and deployed multiple frontend and full-stack web projects.",
+      description: "Built and deployed multiple frontend and full-stack web applications using React, Next.js, Node, Express, and Supabase.",
       icon: <Code size={20} />
     },
     {
       title: "Git & Version Control",
-      description: "Mastered collaborative version control, reviews, and branching.",
+      description: "Practiced standard version control workflows, branching, and clean repository structures.",
       icon: <GitPullRequest size={20} />
     },
     {
       title: "Open Source Presence",
-      description: "Published all source files on GitHub with clean repository structures.",
+      description: "Published project repositories on GitHub with clear documentation and deployment setups.",
       icon: <Globe size={20} />
     },
     {
-      title: "Responsive Development",
-      description: "Created responsive interactive products with React and JavaScript.",
+      title: "Modern UI & Performance",
+      description: "Created responsive interactive interfaces with React, Next.js, and Framer Motion.",
       icon: <Zap size={20} />
     }
   ];

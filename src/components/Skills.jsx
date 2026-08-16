@@ -1,65 +1,66 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Server, GitBranch, Wrench, GraduationCap, Layout, Compass, Terminal, FileCode, Figma, Cpu, Database, Settings } from 'lucide-react';
+import { Code, Server, GitBranch, Wrench, GraduationCap, Layout, Compass, Terminal, FileCode, Figma, Cpu, Database, Settings, Sparkles, Rocket } from 'lucide-react';
 
 const Skills = () => {
   const categories = [
     {
-      title: "Frontend Development",
+      title: "Languages",
       icon: <Code size={18} />,
       skills: [
+        { name: "JavaScript (ES6+)", icon: <FileCode size={14} /> },
+        { name: "TypeScript", icon: <FileCode size={14} /> },
         { name: "HTML5", icon: <Layout size={14} /> },
         { name: "CSS3", icon: <Compass size={14} /> },
-        { name: "JavaScript (ES6+)", icon: <FileCode size={14} /> },
-        { name: "React", icon: <Cpu size={14} /> },
-        { name: "Vite", icon: <Settings size={14} /> }
+        { name: "SQL", icon: <Database size={14} /> }
       ]
     },
     {
-      title: "Backend Development",
+      title: "Frontend",
+      icon: <Layout size={18} />,
+      skills: [
+        { name: "React.js", icon: <Cpu size={14} /> },
+        { name: "Next.js", icon: <Cpu size={14} /> },
+        { name: "Tailwind CSS", icon: <Compass size={14} /> },
+        { name: "Framer Motion", icon: <Sparkles size={14} /> }
+      ]
+    },
+    {
+      title: "Backend",
       icon: <Server size={18} />,
       skills: [
         { name: "Node.js", icon: <Terminal size={14} /> },
         { name: "Express.js", icon: <Server size={14} /> },
+        { name: "REST APIs", icon: <Settings size={14} /> }
+      ]
+    },
+    {
+      title: "Databases",
+      icon: <Database size={18} />,
+      skills: [
+        { name: "PostgreSQL", icon: <Database size={14} /> },
+        { name: "Supabase", icon: <Cpu size={14} /> },
         { name: "MongoDB", icon: <Database size={14} /> }
       ]
     },
     {
-      title: "Database Platforms",
-      icon: <Database size={18} />,
-      skills: [
-        { name: "MongoDB", icon: <Database size={14} /> },
-        { name: "Supabase", icon: <Cpu size={14} /> },
-        { name: "Firebase Firestore", icon: <Settings size={14} /> }
-      ]
-    },
-    {
-      title: "Version Control",
-      icon: <GitBranch size={18} />,
-      skills: [
-        { name: "Git", icon: <GitBranch size={14} /> },
-        { name: "GitHub", icon: <GithubIcon size={14} /> }
-      ]
-    },
-    {
-      title: "Development Tools",
+      title: "Developer Tools",
       icon: <Wrench size={18} />,
       skills: [
-        { name: "VS Code", icon: <Terminal size={14} /> },
+        { name: "Git", icon: <GitBranch size={14} /> },
+        { name: "GitHub", icon: <GithubIcon size={14} /> },
         { name: "Postman", icon: <Settings size={14} /> },
-        { name: "Figma", icon: <Figma size={14} /> },
-        { name: "Claude Code", icon: <Cpu size={14} /> },
-        { name: "Codex", icon: <FileCode size={14} /> },
-        { name: "Cursor", icon: <Settings size={14} /> }
+        { name: "Vercel", icon: <Rocket size={14} /> }
       ]
     },
     {
-      title: "Currently Learning",
-      icon: <GraduationCap size={18} />,
+      title: "Development Environments & AI Tools",
+      icon: <Terminal size={18} />,
       skills: [
-        { name: "Advanced React", icon: <Cpu size={14} /> },
-        { name: "Advanced Backend Concepts", icon: <Server size={14} /> },
-        { name: "Building Production Full-Stack Apps", icon: <Layout size={14} /> }
+        { name: "Cursor", icon: <Settings size={14} /> },
+        { name: "VS Code", icon: <Terminal size={14} /> },
+        { name: "Claude Code", icon: <Cpu size={14} /> },
+        { name: "OpenAI Codex", icon: <FileCode size={14} /> }
       ]
     }
   ];

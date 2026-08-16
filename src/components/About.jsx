@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   const stats = [
-    { number: "4", label: "Projects Built" },
-    { number: "1", label: "Internship Completed" },
-    { number: "1", label: "Full Stack Course" },
-    { number: "12+", label: "Technologies Learned" }
+    { number: "4+", label: "Projects Built" },
+    { number: "2025", label: "B.Tech Graduate" },
+    { number: "Full Stack", label: "Web Developer" },
+    { number: "10+", label: "Technologies" }
   ];
 
   return (
@@ -21,15 +21,15 @@ const About = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="section-subtitle">About Me</span>
-            <h2 className="section-title story-main-title">Bridging Theory & Practice</h2>
+            <h2 className="section-title story-main-title">Computer Science Graduate & Full Stack Developer</h2>
             <p className="story-paragraph">
-              I hold a Computer Science degree and am an aspiring Full Stack Developer passionate about designing and building modern web applications.
+              I am a Computer Science Engineering graduate (B.Tech 2021–2025) and Full Stack Web Developer actively seeking my first software development role.
             </p>
             <p className="story-paragraph">
-              After graduating, I realized that true engineering mastery comes from application. Instead of relying solely on classroom theory, I dedicated myself to learning modern web development. I completed a comprehensive Full Stack Web Development course, reinforcing my skills with production workflows.
+              I specialize in building and deploying full-stack web applications using React, Next.js, Node.js, Express.js, Supabase, and PostgreSQL. My focus is on writing clean, scalable code and delivering seamless user experiences.
             </p>
             <p className="story-paragraph">
-              During my learning journey, I completed a frontend internship at Radixcube Solutions, where I practiced professional frontend engineering, strengthened debugging workflows, and built responsive user interfaces.
+              Through hands-on project engineering—most notably building SkillSwap, a time-bank exchange platform with custom ledger logic and database-backed transactional verification—I have developed strong practical skills across frontend, backend, database management, and modern developer tooling.
             </p>
           </motion.div>
 

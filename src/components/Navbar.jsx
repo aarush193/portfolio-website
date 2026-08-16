@@ -20,7 +20,7 @@ const Navbar = () => {
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Experience', href: '#experience' },
+    { label: 'Education', href: '#education' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -39,9 +39,6 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <a href="#contact" className="btn btn-secondary btn-nav">
-              Let's Connect <ArrowUpRight size={14} />
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,13 +73,6 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <a 
-                href="#contact" 
-                className="btn btn-secondary mobile-hire-btn"
-                onClick={() => setIsOpen(false)}
-              >
-                Let's Connect <ArrowUpRight size={14} />
-              </a>
             </div>
           </motion.div>
         )}

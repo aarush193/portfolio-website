@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Github, Linkedin, Mail, Cpu, Terminal, Database } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Cpu, Terminal, Database } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -21,12 +21,12 @@ const Hero = () => {
             </div>
 
             <h1 className="hero-title">
-              Building clean, <br />
-              <span className="blue-accent">performant</span> web apps.
+              Aarush Solomon <br />
+              <span className="blue-accent">Full Stack Web Developer</span>
             </h1>
 
             <p className="hero-description">
-              I build modern, responsive web applications using React, Node.js, Express.js, and MongoDB, with a focus on clean architecture and user experience.
+              Computer Science graduate building scalable, user-focused full-stack web applications with React, Next.js, Node.js, Express.js, Supabase, and PostgreSQL.
             </p>
 
             <div className="hero-actions">
@@ -42,11 +42,8 @@ const Hero = () => {
               <a href="https://github.com/aarush193" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com/in/aarush-solomon-217148372" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/aarush-solomon-217148372" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
                 <Linkedin size={20} />
-              </a>
-              <a href="mailto:aarushsolomon193@gmail.com" className="social-icon" aria-label="Email">
-                <Mail size={20} />
               </a>
             </div>
           </motion.div>
@@ -62,10 +59,10 @@ const Hero = () => {
               <div className="composition-card frontend-layer">
                 <div className="layer-header">
                   <Cpu size={16} className="layer-icon" />
-                  <div className="layer-tag">Frontend UI</div>
+                  <div className="layer-tag">Frontend Stack</div>
                 </div>
                 <div className="layer-details">
-                  <span>React • Vite • SPA</span>
+                  <span>React.js • Next.js • Tailwind CSS</span>
                 </div>
               </div>
               
@@ -74,10 +71,10 @@ const Hero = () => {
               <div className="composition-card api-layer">
                 <div className="layer-header">
                   <Terminal size={16} className="layer-icon" />
-                  <div className="layer-tag">API Gateway</div>
+                  <div className="layer-tag">Backend Services</div>
                 </div>
                 <div className="layer-details">
-                  <span>Node.js • Express Router</span>
+                  <span>Node.js • Express.js • REST APIs</span>
                 </div>
               </div>
               
@@ -89,7 +86,7 @@ const Hero = () => {
                   <div className="layer-tag">Database Layer</div>
                 </div>
                 <div className="layer-details">
-                  <span>MongoDB • Supabase</span>
+                  <span>PostgreSQL • Supabase • MongoDB</span>
                 </div>
               </div>
             </div>
@@ -100,19 +97,21 @@ const Hero = () => {
         <div className="tech-strip">
           <span className="tech-strip-title">Core Technologies</span>
           <div className="tech-strip-items">
-            <span>React</span>
+            <span>React.js</span>
+            <span className="dot-sep">•</span>
+            <span>Next.js</span>
             <span className="dot-sep">•</span>
             <span>Node.js</span>
             <span className="dot-sep">•</span>
             <span>Express.js</span>
             <span className="dot-sep">•</span>
-            <span>MongoDB</span>
+            <span>PostgreSQL</span>
             <span className="dot-sep">•</span>
-            <span>JavaScript</span>
+            <span>Supabase</span>
             <span className="dot-sep">•</span>
-            <span>Git</span>
+            <span>TypeScript</span>
             <span className="dot-sep">•</span>
-            <span>GitHub</span>
+            <span>Tailwind CSS</span>
           </div>
         </div>
       </div>
