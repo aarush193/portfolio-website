@@ -74,10 +74,6 @@ function App() {
       {/* Zero-Overhead Scroll Progress Indicator */}
       <div ref={progressBarRef} className="scroll-progress-bar" aria-hidden="true" />
       
-      {/* Background Matrix Dot Grid & Aurora Mesh */}
-      <div className="tech-matrix-grid" aria-hidden="true" />
-      <div className="aurora-bg-mesh" aria-hidden="true" />
-      
       {/* Ambient Pointer Glow */}
       <div ref={glowRef} className="ambient-cursor-glow" aria-hidden="true" style={{ opacity: 0 }} />
       

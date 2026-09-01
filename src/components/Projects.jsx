@@ -406,92 +406,80 @@ const Projects = () => {
         </motion.div>
 
         {/* Project Grid with lightweight hardware accelerated rendering */}
-        <motion.div 
-          className="projects-grid"
-          layout
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className={`project-card-wrapper ${project.flagship ? 'flagship' : ''}`}
-              >
-                <div className={project.flagship ? "flagship-border-beam" : ""}>
-                  <div className="glass-card project-card">
-                    {/* Realistic Dark-Mode Browser Header */}
-                    <div className="browser-header">
-                      <div className="browser-dots">
-                        <span className="dot dot-close"></span>
-                        <span className="dot dot-min"></span>
-                        <span className="dot dot-max"></span>
-                      </div>
+        <div className="projects-grid">
+          {filteredProjects.map((project) => (
+            <div
+              key={project.id}
+              className={`project-card-wrapper ${project.flagship ? 'flagship' : ''}`}
+            >
+              <div className="glass-card project-card">
+                {/* Realistic Dark-Mode Browser Header */}
+                <div className="browser-header">
+                  <div className="browser-dots">
+                    <span className="dot dot-close"></span>
+                    <span className="dot dot-min"></span>
+                    <span className="dot dot-max"></span>
+                  </div>
 
-                      <div className="browser-address-bar">
-                        <span className="address-protocol">https://</span>
-                        <span className="address-domain">{project.url}</span>
-                      </div>
+                  <div className="browser-address-bar">
+                    <span className="address-protocol">https://</span>
+                    <span className="address-domain">{project.url}</span>
+                  </div>
 
-                      <div className="browser-badge">
-                        <span className="badge-index">{project.indexLabel}</span>
-                      </div>
-                    </div>
-
-                    {/* Visual Simulation Canvas */}
-                    <div className="project-visual-canvas">
-                      {project.visualLayout}
-                    </div>
-
-                    {/* Project Details */}
-                    <div className="project-details">
-                      <div className="project-title-row">
-                        <div className="project-meta-icon-title">
-                          <span className="project-header-icon">{project.icon}</span>
-                          <span className="project-subtitle-label">{project.subtitle}</span>
-                        </div>
-                        {project.flagship && (
-                          <span className="flagship-indicator">
-                            <Sparkles size={11} /> Flagship
-                          </span>
-                        )}
-                      </div>
-                      
-                      <h3 className="project-card-title">{project.title}</h3>
-                      <p className="project-card-desc">{project.description}</p>
-
-                      {project.highlights && (
-                        <ul className="project-highlights-list">
-                          {project.highlights.map((h, i) => (
-                            <li key={i} className="highlight-item">{h}</li>
-                          ))}
-                        </ul>
-                      )}
-
-                      <div className="tech-badge-container">
-                        {project.tech.map((t, idx) => (
-                          <span key={idx} className="tech-badge">{t}</span>
-                        ))}
-                      </div>
-
-                      <div className="project-actions">
-                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-action">
-                          <Github size={14} /> GitHub Repository
-                        </a>
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-action">
-                          Live Application <ExternalLink size={14} />
-                        </a>
-                      </div>
-                    </div>
+                  <div className="browser-badge">
+                    <span className="badge-index">{project.indexLabel}</span>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+
+                {/* Visual Simulation Canvas */}
+                <div className="project-visual-canvas">
+                  {project.visualLayout}
+                </div>
+
+                {/* Project Details */}
+                <div className="project-details">
+                  <div className="project-title-row">
+                    <div className="project-meta-icon-title">
+                      <span className="project-header-icon">{project.icon}</span>
+                      <span className="project-subtitle-label">{project.subtitle}</span>
+                    </div>
+                    {project.flagship && (
+                      <span className="flagship-indicator">
+                        <Sparkles size={11} /> Flagship
+                      </span>
+                    )}
+                  </div>
+                  
+                  <h3 className="project-card-title">{project.title}</h3>
+                  <p className="project-card-desc">{project.description}</p>
+
+                  {project.highlights && (
+                    <ul className="project-highlights-list">
+                      {project.highlights.map((h, i) => (
+                        <li key={i} className="highlight-item">{h}</li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <div className="tech-badge-container">
+                    {project.tech.map((t, idx) => (
+                      <span key={idx} className="tech-badge">{t}</span>
+                    ))}
+                  </div>
+
+                  <div className="project-actions">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-action">
+                      <Github size={14} /> GitHub Repository
+                    </a>
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-action">
+                      Live Application <ExternalLink size={14} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <style>{`

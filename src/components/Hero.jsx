@@ -115,7 +115,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Interactive Live Architecture Simulator */}
+            {/* Interactive Live Architecture Simulator (100% Static Dimensions & Smooth) */}
             <div 
               className="simulator-container"
               onMouseLeave={() => setActiveTier(null)}
@@ -146,30 +146,6 @@ const Hero = () => {
                         <div className="layer-details">
                           <span className="layer-tech">{node.tech}</span>
                         </div>
-                        
-                        <AnimatePresence>
-                          {isActive && (
-                            <motion.div 
-                              className="layer-metrics-drawer"
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: 'auto' }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                              style={{ overflow: 'hidden' }}
-                            >
-                              <div className="metrics-row">
-                                <span className="metrics-label">Capability:</span>
-                                <span className="metrics-value">{node.metrics}</span>
-                              </div>
-                              <div className="project-link-row">
-                                <span className="link-label">Project:</span>
-                                <a href={node.projectLink} className="sim-project-anchor">
-                                  {node.project} <ArrowRight size={12} />
-                                </a>
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
                       </div>
 
                       {index < architectureNodes.length - 1 && (
@@ -187,8 +163,13 @@ const Hero = () => {
                 <div className="trace-header">
                   <span className="trace-dot"></span>
                   <span className="trace-title">
-                    {activeTier !== null ? "Simulated Request Trace:" : "System Status:"}
+                    {activeTier !== null ? `Inspector: ${architectureNodes[activeTier].name}` : "System Status:"}
                   </span>
+                  {activeTier !== null && (
+                    <a href={architectureNodes[activeTier].projectLink} className="sim-project-anchor">
+                      {architectureNodes[activeTier].project} <ArrowRight size={11} />
+                    </a>
+                  )}
                 </div>
                 <div className="trace-items">
                   {activeTier !== null && architectureNodes[activeTier] ? (
@@ -202,7 +183,7 @@ const Hero = () => {
                     <>
                       <span className="trace-ep">All 4 Tiers Online (Production Ready)</span>
                       <span className="trace-stat">100% Verified</span>
-                      <span className="trace-sec">Hover any layer to inspect</span>
+                      <span className="trace-sec">Hover or click any tier to inspect</span>
                     </>
                   )}
                 </div>
@@ -485,45 +466,14 @@ const Hero = () => {
           font-family: var(--font-mono);
         }
 
-        .layer-metrics-drawer {
-          margin-top: 0.6rem;
-          padding-top: 0.6rem;
-          border-top: 1px dashed rgba(255, 255, 255, 0.08);
-          display: flex;
-          flex-direction: column;
-          gap: 0.35rem;
-          font-size: 0.775rem;
-          padding-left: 1.5rem;
-          animation: fadeInFast 0.15s ease-out;
-        }
-
-        @keyframes fadeInFast {
-          from { opacity: 0; transform: translateY(-4px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-
-        .metrics-row, .project-link-row {
-          display: flex;
-          align-items: center;
-          gap: 0.4rem;
-        }
-
-        .metrics-label, .link-label {
-          color: #10b981;
-          font-weight: 600;
-          font-size: 0.75rem;
-        }
-
-        .metrics-value {
-          color: #e2e8f0;
-        }
-
         .sim-project-anchor {
           color: #38bdf8;
           display: inline-flex;
           align-items: center;
           gap: 0.25rem;
           font-weight: 500;
+          margin-left: auto;
+          font-size: 0.7rem;
           transition: var(--transition-fast);
         }
 
@@ -532,18 +482,20 @@ const Hero = () => {
           text-decoration: underline;
         }
 
-        /* Simulated Trace Bar */
+        /* Simulated Trace Bar with Solid Static Height */
         .simulator-trace-bar {
           margin-top: 1.2rem;
           background: #05070a;
           border: 1px solid var(--card-border);
           border-radius: 8px;
-          padding: 0.6rem 0.9rem;
+          padding: 0.65rem 0.9rem;
           display: flex;
           flex-direction: column;
-          gap: 0.35rem;
+          gap: 0.4rem;
           font-family: var(--font-mono);
           font-size: 0.725rem;
+          min-height: 62px;
+          justify-content: center;
         }
 
         .trace-header {

@@ -313,43 +313,6 @@ a {
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
 }
 
-/* High-Tech Dot Matrix Overlay */
-.tech-matrix-grid {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 28px 28px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.6;
-  contain: strict;
-}
-
-/* GPU Aurora Breathing Glow */
-.aurora-bg-mesh {
-  position: fixed;
-  width: 550px;
-  height: 550px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, rgba(6, 182, 212, 0.025) 45%, transparent 70%);
-  top: -120px;
-  right: -80px;
-  pointer-events: none;
-  z-index: 0;
-  animation: auroraFloat 16s infinite ease-in-out alternate;
-  transform: translate3d(0, 0, 0);
-  will-change: transform, opacity;
-}
-
-@keyframes auroraFloat {
-  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.65; }
-  50% { transform: translate3d(-50px, 70px, 0) scale(1.15); opacity: 0.95; }
-  100% { transform: translate3d(35px, 100px, 0) scale(0.95); opacity: 0.75; }
-}
-
 /* Radar Ping Multi-Ring Ripple Animation */
 .badge-dot-container {
   position: relative;
@@ -401,42 +364,15 @@ a {
   }
 }
 
-/* Flagship Card Border Beam */
-.flagship-border-beam {
-  position: relative;
-  border-radius: 15px;
-  padding: 1px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.05);
+/* Flagship Project Card Premium Glow (High Performance, 0% CPU overhead) */
+.project-card-wrapper.flagship .glass-card {
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 4px 24px -5px rgba(16, 185, 129, 0.2);
 }
 
-.flagship-border-beam::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: conic-gradient(
-    transparent 0deg,
-    transparent 280deg,
-    rgba(16, 185, 129, 0.65) 320deg,
-    rgba(6, 182, 212, 0.85) 360deg
-  );
-  animation: rotateBeam 6s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes rotateBeam {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.flagship-border-beam > .glass-card {
-  position: relative;
-  z-index: 1;
-  border-color: transparent !important;
+.project-card-wrapper.flagship .glass-card:hover {
+  border-color: rgba(16, 185, 129, 0.55);
+  box-shadow: 0 10px 36px -5px rgba(16, 185, 129, 0.3);
 }
 
 /* Laser Scanline Sweep for TripPlanner AI Showcase */
