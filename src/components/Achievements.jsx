@@ -10,13 +10,18 @@ const Achievements = () => {
       icon: <Award size={20} />
     },
     {
-      title: "Full Stack SkillSwap System",
-      description: "Engineered a time-bank platform with custom transaction validation, Supabase RPC, and PostgreSQL ledger.",
+      title: "TripPlanner AI Multimodal Platform",
+      description: "Architected multimodal travel planner with Google Gemini 3.7 Vision, Haversine geospatial clustering, Nominatim REST APIs & 36 tests.",
+      icon: <Zap size={20} />
+    },
+    {
+      title: "SkillSwap Time-Bank System",
+      description: "Engineered a time-bank platform with custom transaction validation, Supabase RPC, Next.js 16 SSR, and PostgreSQL ledger.",
       icon: <ShieldCheck size={20} />
     },
     {
-      title: "Project Portfolio",
-      description: "Built and deployed multiple frontend and full-stack web applications using React, Next.js, Node, Express, and Supabase.",
+      title: "Full-Stack Project Portfolio",
+      description: "Built and deployed modern web applications using React 19, Next.js 16, TypeScript, Node.js, Express, and Supabase.",
       icon: <Code size={20} />
     },
     {
@@ -28,31 +33,32 @@ const Achievements = () => {
       title: "Open Source Presence",
       description: "Published project repositories on GitHub with clear documentation and deployment setups.",
       icon: <Globe size={20} />
-    },
-    {
-      title: "Modern UI & Performance",
-      description: "Created responsive interactive interfaces with React, Next.js, and Framer Motion.",
-      icon: <Zap size={20} />
     }
   ];
 
   return (
     <section id="achievements" className="section achievements-section">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        >
           <span className="section-subtitle">Highlights</span>
           <h2 className="section-title">Achievements & Milestones</h2>
-        </div>
+        </motion.div>
 
         <div className="achievements-grid">
           {achievements.map((item, index) => (
             <motion.div
               key={index}
               className="glass-card achievement-card"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="achievement-icon-box">
                 {item.icon}
@@ -82,24 +88,42 @@ const Achievements = () => {
           align-items: flex-start;
           gap: 1.2rem;
           padding: 1.8rem;
+          background: rgba(13, 17, 23, 0.7);
+          border: 1px solid var(--card-border);
+          border-radius: 14px;
+          transform: translateZ(0);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          will-change: transform, border-color, box-shadow;
+          transition: border-color var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+
+        .achievement-card:hover {
+          border-color: rgba(16, 185, 129, 0.4);
+          transform: translateY(-3px) translateZ(0);
+          box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.22);
         }
 
         .achievement-icon-box {
-          background: rgba(168, 85, 247, 0.1);
-          border: 1px solid rgba(168, 85, 247, 0.2);
-          color: var(--secondary);
+          background: rgba(16, 185, 129, 0.1);
+          border: 1px solid rgba(16, 185, 129, 0.25);
+          color: #10b981;
           padding: 0.75rem;
           border-radius: 12px;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
+          transform: translateZ(0);
+          transition: all var(--transition-normal);
         }
 
         .achievement-card:hover .achievement-icon-box {
-          background: var(--gradient-secondary);
-          color: white;
-          border-color: transparent;
+          background: #10b981;
+          color: #080a0f;
+          border-color: #10b981;
+          box-shadow: 0 0 16px rgba(16, 185, 129, 0.4);
+          transform: scale(1.05);
         }
 
         .achievement-card-title {
@@ -111,7 +135,7 @@ const Achievements = () => {
         .achievement-card-desc {
           font-size: 0.9rem;
           color: var(--text-secondary);
-          line-height: 1.4;
+          line-height: 1.5;
         }
       `}</style>
     </section>

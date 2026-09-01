@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Github, Linkedin, Download } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Copy, Check } from 'lucide-react';
 
 const Contact = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText("aarushsolomon193@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section id="contact" className="section contact-section">
       <div className="blur-glow" style={{ bottom: '10%', right: '10%' }}></div>
@@ -11,10 +20,10 @@ const Contact = () => {
         {/* Goals Section: What I'm Looking For */}
         <motion.div 
           className="glass-card goals-container"
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
           <h3 className="goals-title">What I'm Looking For</h3>
           <p className="goals-text">
@@ -22,34 +31,43 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="section-header contact-header">
+        <motion.div 
+          className="section-header contact-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+        >
           <span className="section-subtitle">Get in Touch</span>
           <h2 className="section-title">Let's build something together</h2>
-        </div>
+        </motion.div>
 
         <div className="contact-wrapper-centered">
           {/* Contact Details & Links */}
           <motion.div 
             className="glass-card contact-details-box"
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="contact-box-desc">
               Whether you have an open position, a project proposal, or want to discuss full-stack web development, feel free to get in touch!
             </p>
 
             <div className="contact-info-list">
-              <a href="mailto:aarushsolomon193@gmail.com" className="contact-info-item">
+              <div className="contact-info-item copyable" onClick={handleCopyEmail} role="button" tabIndex={0}>
                 <div className="icon-wrapper">
                   <Mail size={18} />
                 </div>
-                <div>
-                  <span className="info-label">Email</span>
+                <div className="info-text-group">
+                  <span className="info-label">Email (Click to Copy)</span>
                   <span className="info-value">aarushsolomon193@gmail.com</span>
                 </div>
-              </a>
+                <button className="copy-action-btn" title="Copy Email">
+                  {copied ? <Check size={14} className="text-mint" /> : <Copy size={14} />}
+                </button>
+              </div>
 
               <div className="contact-info-item">
                 <div className="icon-wrapper">
@@ -92,23 +110,31 @@ const Contact = () => {
         .goals-container {
           max-width: 800px;
           margin: 0 auto 4rem;
-          padding: 2rem;
+          padding: 2.2rem;
           text-align: center;
+          background: rgba(13, 17, 23, 0.7);
+          border: 1px solid var(--card-border);
+          border-radius: 14px;
+        }
+
+        .goals-container:hover {
+          border-color: rgba(16, 185, 129, 0.35);
         }
 
         .goals-title {
           font-size: 1.5rem;
           margin-bottom: 0.8rem;
+          color: var(--text-primary);
         }
 
         .goals-text {
           font-size: 1rem;
           color: var(--text-secondary);
-          line-height: 1.5;
+          line-height: 1.6;
         }
 
         .goals-text strong {
-          color: var(--text-primary);
+          color: #10b981;
         }
 
         .contact-header {
@@ -123,14 +149,19 @@ const Contact = () => {
 
         .contact-details-box {
           padding: 2.5rem;
-          background: rgba(15, 15, 15, 0.6);
+          background: rgba(13, 17, 23, 0.8);
           border: 1px solid var(--card-border);
-          transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+          border-radius: 14px;
+          transform: translateZ(0);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          will-change: transform, border-color, box-shadow;
+          transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
         }
 
         .contact-details-box:hover {
-          border-color: var(--primary);
-          box-shadow: 0 4px 20px -5px var(--primary-glow);
+          border-color: rgba(16, 185, 129, 0.45);
+          box-shadow: 0 10px 35px -10px rgba(16, 185, 129, 0.25);
         }
 
         .contact-box-desc {
@@ -151,27 +182,69 @@ const Contact = () => {
           display: flex;
           align-items: center;
           gap: 1rem;
-          transition: var(--transition-fast);
+          padding: 0.6rem 0.8rem;
+          border-radius: 10px;
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid var(--card-border);
+          transform: translateZ(0);
+          will-change: transform, background, border-color;
+          transition: all var(--transition-normal);
         }
 
-        a.contact-info-item:hover {
-          transform: translateX(4px);
+        .contact-info-item.copyable {
+          cursor: pointer;
         }
 
-        .icon-wrapper {
+        .contact-info-item.copyable:hover {
+          border-color: rgba(16, 185, 129, 0.35);
+          background: rgba(16, 185, 129, 0.04);
+          transform: translateX(4px) translateZ(0);
+        }
+
+        .info-text-group {
+          flex-grow: 1;
+        }
+
+        .copy-action-btn {
           background: rgba(255, 255, 255, 0.03);
           border: 1px solid var(--card-border);
-          padding: 0.6rem;
+          color: var(--text-muted);
+          width: 28px;
+          height: 28px;
           border-radius: 6px;
-          color: var(--primary);
           display: flex;
           align-items: center;
           justify-content: center;
+          cursor: pointer;
+          transition: all var(--transition-fast);
+        }
+
+        .contact-info-item.copyable:hover .copy-action-btn {
+          border-color: rgba(16, 185, 129, 0.3);
+          color: #10b981;
+        }
+
+        .text-mint {
+          color: #10b981 !important;
+        }
+
+        .icon-wrapper {
+          background: rgba(16, 185, 129, 0.1);
+          border: 1px solid rgba(16, 185, 129, 0.25);
+          padding: 0.6rem;
+          border-radius: 8px;
+          color: #10b981;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: translateZ(0);
+          transition: all var(--transition-normal);
         }
 
         .info-label {
           display: block;
-          font-size: 0.75rem;
+          font-family: var(--font-mono);
+          font-size: 0.725rem;
           color: var(--text-muted);
           text-transform: uppercase;
           font-weight: 600;
@@ -203,19 +276,22 @@ const Contact = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 40px;
-          height: 40px;
-          border-radius: 6px;
+          width: 42px;
+          height: 42px;
+          border-radius: 8px;
           background: rgba(255, 255, 255, 0.02);
           border: 1px solid var(--card-border);
           color: var(--text-secondary);
-          transition: var(--transition-fast);
+          transform: translateZ(0);
+          will-change: transform, border-color, background, color;
+          transition: all var(--transition-normal);
         }
 
         .social-circle:hover {
-          color: var(--text-primary);
-          border-color: rgba(255, 255, 255, 0.15);
-          background: rgba(255, 255, 255, 0.05);
+          color: #10b981;
+          border-color: rgba(16, 185, 129, 0.4);
+          background: rgba(16, 185, 129, 0.08);
+          transform: translateY(-2px) translateZ(0);
         }
 
         @media (max-width: 600px) {

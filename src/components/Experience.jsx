@@ -1,6 +1,5 @@
 import React from 'react';
 import { Calendar, MapPin, Briefcase, ChevronRight } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const Experience = () => {
   const points = [
@@ -19,13 +18,7 @@ const Experience = () => {
         </div>
 
         <div className="experience-wrapper">
-          <motion.div 
-            className="glass-card experience-card"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="glass-card experience-card">
             <div className="experience-header">
               <div className="role-company">
                 <div className="icon-wrapper">
@@ -60,7 +53,7 @@ const Experience = () => {
                 ))}
               </ul>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

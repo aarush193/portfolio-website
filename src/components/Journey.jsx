@@ -36,12 +36,18 @@ const Journey = () => {
     },
     {
       title: "6. SkillSwap Flagship Platform",
-      description: "Built and deployed a full-stack time-bank skill exchange platform featuring atomic transaction logic and RPC functions.",
+      description: "Built and deployed a full-stack time-bank skill exchange platform featuring atomic transaction logic, Supabase SSR modernization, and RPC functions.",
       icon: <Award size={16} />,
       status: "completed"
     },
     {
-      title: "7. Seeking Software Role",
+      title: "7. TripPlanner AI Platform",
+      description: "Architected a multimodal AI travel planner with Google Gemini 3.7 Vision screenshot extraction, geospatial clustering algorithms, and Supabase RLS backend.",
+      icon: <Sparkles size={16} />,
+      status: "completed"
+    },
+    {
+      title: "8. Seeking Software Role",
       description: "Actively seeking entry-level Full Stack Web Developer opportunities to build high-impact applications.",
       icon: <Rocket size={16} />,
       status: "current"
@@ -51,10 +57,16 @@ const Journey = () => {
   return (
     <section id="journey" className="section journey-section">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        >
           <span className="section-subtitle">Roadmap</span>
           <h2 className="section-title">My Journey</h2>
-        </div>
+        </motion.div>
 
         <div className="timeline-container">
           <div className="timeline-line"></div>
@@ -65,10 +77,10 @@ const Journey = () => {
               <motion.div 
                 key={index} 
                 className={`timeline-item ${isEven ? 'left' : 'right'} ${step.status}`}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
+                initial={{ opacity: 0, x: isEven ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="timeline-dot-wrapper">
                   <div className="timeline-dot">
@@ -159,33 +171,49 @@ const Journey = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: var(--transition-fast);
+          transform: translateZ(0);
+          transition: all var(--transition-normal);
         }
 
         .timeline-item.completed .timeline-dot {
-          border-color: var(--primary);
-          color: var(--primary);
+          border-color: #10b981;
+          color: #10b981;
         }
 
         .timeline-item.current .timeline-dot {
-          border-color: var(--primary);
-          color: var(--primary);
-          box-shadow: 0 0 10px var(--primary-glow);
+          border-color: #10b981;
+          color: #10b981;
+          box-shadow: 0 0 14px rgba(16, 185, 129, 0.4);
+          background: rgba(16, 185, 129, 0.1);
         }
 
         .timeline-content {
           width: 100%;
           max-width: 360px;
-          padding: 1.2rem;
-          background: rgba(15, 15, 15, 0.4);
+          padding: 1.3rem;
+          background: rgba(13, 17, 23, 0.75);
+          border: 1px solid var(--card-border);
+          border-radius: 12px;
+          transform: translateZ(0);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          will-change: transform, border-color, box-shadow;
+          transition: border-color var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+
+        .timeline-content:hover {
+          border-color: rgba(16, 185, 129, 0.35);
+          box-shadow: 0 8px 25px -8px rgba(16, 185, 129, 0.22);
+          transform: translateY(-2px) translateZ(0);
         }
 
         .status-badge {
-          font-size: 0.7rem;
+          font-family: var(--font-mono);
+          font-size: 0.675rem;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          padding: 0.1rem 0.4rem;
+          padding: 0.15rem 0.5rem;
           border-radius: 4px;
           display: inline-block;
           margin-bottom: 0.5rem;
@@ -198,9 +226,9 @@ const Journey = () => {
         }
 
         .status-badge.current {
-          background: rgba(59, 130, 246, 0.1);
-          color: #3b82f6;
-          border: 1px solid rgba(59, 130, 246, 0.2);
+          background: rgba(16, 185, 129, 0.12);
+          color: #34d399;
+          border: 1px solid rgba(16, 185, 129, 0.3);
         }
 
         .timeline-item-title {

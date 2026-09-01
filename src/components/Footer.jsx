@@ -61,14 +61,17 @@ const Footer = () => {
           align-items: center;
           justify-content: center;
           cursor: pointer;
+          transform: translateZ(0);
+          will-change: transform, background, color, box-shadow;
           transition: var(--transition-normal);
         }
 
         .back-to-top-btn:hover {
-          background: var(--primary);
-          color: white;
-          border-color: transparent;
-          transform: translateY(-3px);
+          background: #10b981;
+          color: #080a0f;
+          border-color: #10b981;
+          transform: translateY(-3px) translateZ(0);
+          box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
         }
 
         @media (max-width: 480px) {

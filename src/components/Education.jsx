@@ -1,23 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, MapPin, Calendar, BookOpen } from 'lucide-react';
+import { GraduationCap, MapPin, Calendar, BookOpen, Award, CheckCircle } from 'lucide-react';
 
 const Education = () => {
   return (
     <section id="education" className="section education-section">
       <div className="container">
-        <div className="section-header">
-          <span className="section-subtitle">Academic Credentials</span>
-          <h2 className="section-title">Education</h2>
-        </div>
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <span className="section-subtitle">Academic & Certifications</span>
+          <h2 className="section-title">Education & Credentials</h2>
+        </motion.div>
 
         <div className="education-wrapper">
-          <motion.div
+          {/* Degree Card */}
+          <motion.div 
             className="glass-card education-card"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="education-header">
               <div className="edu-title-box">
@@ -56,6 +63,33 @@ const Education = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* Certifications Card */}
+          <motion.div 
+            className="glass-card education-card cert-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="education-header">
+              <div className="edu-title-box">
+                <div className="icon-wrapper cert-icon-wrapper">
+                  <Award size={24} />
+                </div>
+                <div>
+                  <h3 className="degree-title">The Ultimate Web Development Course</h3>
+                  <h4 className="major-title">Udemy (CodeWithHarry)</h4>
+                </div>
+              </div>
+
+              <div className="edu-meta">
+                <span className="meta-badge cert-badge">
+                  <CheckCircle size={14} /> Completed: 2026
+                </span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
@@ -67,10 +101,62 @@ const Education = () => {
         .education-wrapper {
           max-width: 800px;
           margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
         }
 
         .education-card {
-          padding: 2.5rem;
+          padding: 2.2rem 2.5rem;
+          background: rgba(13, 17, 23, 0.7);
+          border: 1px solid var(--card-border);
+          border-radius: 14px;
+          transform: translateZ(0);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          will-change: transform, border-color, box-shadow;
+          transition: border-color var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+
+        .education-card:hover {
+          border-color: rgba(16, 185, 129, 0.4);
+          transform: translateY(-3px) translateZ(0);
+          box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.22);
+        }
+
+        .cert-card {
+          background: rgba(13, 17, 23, 0.55);
+          border-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .cert-card:hover {
+          border-color: rgba(6, 182, 212, 0.4);
+          box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.22);
+        }
+
+        .icon-wrapper {
+          background: rgba(16, 185, 129, 0.1);
+          border: 1px solid rgba(16, 185, 129, 0.25);
+          padding: 0.75rem;
+          border-radius: 10px;
+          color: #10b981;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: translateZ(0);
+          transition: all var(--transition-normal);
+        }
+
+        .cert-icon-wrapper {
+          background: rgba(6, 182, 212, 0.1) !important;
+          border-color: rgba(6, 182, 212, 0.25) !important;
+          color: #06b6d4 !important;
+        }
+
+        .cert-badge {
+          background: rgba(6, 182, 212, 0.1) !important;
+          color: #22d3ee !important;
+          border-color: rgba(6, 182, 212, 0.25) !important;
         }
 
         .education-header {
@@ -95,16 +181,18 @@ const Education = () => {
         .major-title {
           font-size: 1.1rem;
           font-weight: 600;
+          color: #10b981;
         }
 
         .meta-badge {
           display: inline-flex;
           align-items: center;
           gap: 0.4rem;
-          background: rgba(20, 184, 166, 0.1);
-          color: #2dd4bf;
-          border: 1px solid rgba(20, 184, 166, 0.2);
+          background: rgba(16, 185, 129, 0.1);
+          color: #34d399;
+          border: 1px solid rgba(16, 185, 129, 0.25);
           font-size: 0.75rem;
+          font-family: var(--font-mono);
           font-weight: 600;
           padding: 0.3rem 0.8rem;
           border-radius: 9999px;
